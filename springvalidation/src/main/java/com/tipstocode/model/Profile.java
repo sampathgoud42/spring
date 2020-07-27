@@ -2,7 +2,8 @@ package com.tipstocode.model;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import com.sun.istack.internal.NotNull;
+import javax.validation.constraints.NotNull;
+
 import com.tipstocode.validator.custom.Mobile;
 
 public class Profile {
