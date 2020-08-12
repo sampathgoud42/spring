@@ -23,7 +23,13 @@ public class ProfileDAOImpl implements ProfileDAO{
 	}
 
 	public ProfileVO updateUser(ProfileVO userVO) {
+		
+		ProfileVO existProfile =mongoTemplate.findById(userVO.get_id(), ProfileVO.class);
 		// TODO Auto-generated method stub
+		//updating createdBy and createdOn
+		userVO.setCreatedBy(existProfile.getCreatedBy());
+		userVO.setCreatedDate(existProfile.getCreatedDate());
+		
 		return userVO = mongoTemplate.save(userVO);
 	}
 

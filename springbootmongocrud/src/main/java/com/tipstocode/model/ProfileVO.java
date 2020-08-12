@@ -1,6 +1,13 @@
 package com.tipstocode.model;
+import java.time.LocalDateTime;
+
+
 import org.bson.types.ObjectId;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
@@ -17,6 +24,18 @@ public class ProfileVO {
 	private String mobile;
 	
 	private String emailId;	
+	
+	@CreatedBy
+	private String createdBy;
+
+	@CreatedDate
+	private LocalDateTime createdDate;
+
+	@LastModifiedBy
+	private String lastModifiedBy;
+
+	@LastModifiedDate
+	private LocalDateTime lastModifiedDate;
 
 	public String get_id() {
 		return _id.toHexString();
@@ -57,6 +76,39 @@ public class ProfileVO {
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
+
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public LocalDateTime getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(LocalDateTime createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public String getLastModifiedBy() {
+		return lastModifiedBy;
+	}
+
+	public void setLastModifiedBy(String lastModifiedBy) {
+		this.lastModifiedBy = lastModifiedBy;
+	}
+
+	public LocalDateTime getLastModifiedDate() {
+		return lastModifiedDate;
+	}
+
+	public void setLastModifiedDate(LocalDateTime lastModifiedDate) {
+		this.lastModifiedDate = lastModifiedDate;
+	}
+	
 	
 	
 
