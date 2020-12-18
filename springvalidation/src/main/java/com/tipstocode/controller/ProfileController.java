@@ -1,8 +1,10 @@
 package com.tipstocode.controller;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,7 +21,9 @@ public class ProfileController {
 	
 	
 	@RequestMapping(value = "/saveprofile", method = RequestMethod.POST )
-	public ResponseEntity<String> saveProfile(@Valid @RequestBody Profile profile) {
+	public ResponseEntity<String> saveProfile(@Valid @RequestBody Profile profile,HttpSession session) {
+		
+		
 		
 		return ResponseEntity.ok("valid");
 		
@@ -27,8 +31,8 @@ public class ProfileController {
 	}
 	
 	@RequestMapping(value = "/getprofilebyid", method = RequestMethod.GET )
-	public ResponseEntity<String> getProfileById(@RequestParam("id") @NotBlank String id) {	
-		
+	public ResponseEntity<String> getProfileById(@RequestParam("id") @NotBlank String id) throws Exception {	
+	
 		return ResponseEntity.ok("valid");		
 		
 	}
